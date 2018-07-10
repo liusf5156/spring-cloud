@@ -8,20 +8,27 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>config-server</artifactId>
+    <artifactId>config-client</artifactId>
 
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+
+        <!-- client需要添加以下依赖，否则访问/refresh将会得到404 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-
 
     </dependencies>
 
